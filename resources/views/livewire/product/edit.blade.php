@@ -97,7 +97,7 @@
                                         @if ( $imageNew )
                                             <img src="{{ $imageNew->temporaryUrl()}}" class="w-50">
                                         @else
-                                            <img src="{{ Storage::disk('s3')->getAdapter()->getClient()->getObjectUrl( env('AWS_BUCKET'), $image )  }}" class="w-50">
+                                            <img src="{{ Storage::disk('s3')->url($image) }}" class="w-50">
                                         @endif
                                     </div>
                                 </div>

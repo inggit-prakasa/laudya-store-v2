@@ -33,7 +33,7 @@
                             @foreach ($products as $product)
                                 <div style="width: 21.5%;border:1px solid rgb(243, 243, 243)" class="m-2">
                                     <div class="productCard">
-                                        <img class="card-img-top" src="{{ Storage::disk('s3')->getAdapter()->getClient()->getObjectUrl( env('AWS_BUCKET'), $product->image ) }}" alt="{{ $product->name }}" style="height: 150px">
+                                        <img class="card-img-top" src="{{ Storage::disk('s3')->url( $product->image ) }}" alt="{{ $product->name }}" style="height: 150px">
                                         <div class="card-body p-2">
                                             <h5 class="card-title">{{ $product->name }}</h5>
                                             <p class="card-text">
